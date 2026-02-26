@@ -33,7 +33,7 @@ async function load(){
         name: c.name,
         author: "@"+(c.creator?.username || "unknown"),
         desc: c.description || "",
-        thumb: c.thumbnail || "https://via.placeholder.com/300x400",
+        thumb: c.avatarUrl || "https://via.placeholder.com/300x400",
         grade: "newbie"
       };
 
@@ -49,3 +49,4 @@ async function load(){
 }
 
 load();
+
