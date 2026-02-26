@@ -34,7 +34,9 @@ async function load(){
         author: "@"+(c.creator?.username || "unknown"),
         desc: c.description || "",
         thumb: c.avatarUrl
-  ? (c.avatarUrl.startsWith("http") ? c.avatarUrl : "https://" + c.avatarUrl)
+  ? `${WORKER_URL}/img?u=` + encodeURIComponent(
+      c.avatarUrl.startsWith("http") ? c.avatarUrl : "https://" + c.avatarUrl
+    )
   : "https://via.placeholder.com/300x400",
         grade: "newbie"
       };
@@ -51,6 +53,7 @@ async function load(){
 }
 
 load();
+
 
 
 
